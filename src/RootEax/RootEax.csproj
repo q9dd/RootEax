@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <AssemblyName>RootEax</AssemblyName>
+    <RootNamespace>EAX</RootNamespace>
+    <Version>3.8.0</Version>
+    <Authors>Root</Authors>
+    <Company>Root</Company>
+    <Copyright>Copyright © Root</Copyright>
+    <Product>Root Eax</Product>
+    <ApplicationIcon>eax.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="NAudio" Version="2.2.1" />
+    <!-- the room engine (native/eaxcore), built by the workflow and packed inside the exe -->
+    <EmbeddedResource Include="eaxcore.dll" LogicalName="eaxcore.dll" Condition="Exists('eaxcore.dll')" />
+  </ItemGroup>
+</Project>
